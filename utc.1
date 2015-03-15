@@ -1,0 +1,54 @@
+.TH utc 1 .SH 
+.SH NAME
+utc \- convert time between UTC and any Canadian time zone
+.SH SYNOPSIS
+.B utc
+[
+.I date
+]
+.B time
+[
+.I -time2
+][-u, --utc][-t, --timezone]
+.PP
+utc -h | Display a help file
+.br 
+utc -m | Display this manual page
+.br
+utc -l | Display list of the Canadian time zones that can be converted
+.SH DESCRIPTION
+The utc facility is used to convert any Canadian time to Coordinated Universal Time (UTC), and vice versa. The facility is triggered by simply issuing 'utc' on the command line followed by a time using a 24 hour clock. A date can be provided in order to account for adjustments associated with Daylight Savings Time. Dates can take any format that can be parsed by the operating system. Times follow the conventions of a 24 h clock (e.g., 9:30 or 14:22). If you provide a time range separated by a dash (e.g., 8:00-17:00), the range will be converted to whatever is specified by the -t flag.
+.PP
+The 'now' keyword is a convenience feature that simply provides the current system time in UTC. Any flags provided after the 'now' keyword will be ignored.
+.PP
+There are two flags (-u and -t) that will determine what output is provided by the utc facility. The -u flag indicates that the time provided is in UTC and should be converted either to local time if no -t flag is set (default behaviour) or to the timezone provided by the -t flag. The -t flag must always be set with a two-letter parameter for the timezone to be used. A simple call to utc -l will provide a list of all supported timezones. 
+.PP
+If the -t flag is set to a particular timezone, the utc facility will convert the input time to the timezone set by the -t flag and convert that time to UTC.
+.SH OPTIONS
+.TP 8
+.B -u, --utc
+Assumes that the time provided by the user is in UTC, which will be converted to whatever timezone is indicated by the -t flag, or local time of no -t flag is set.
+.TP
+.B -t, --timezone
+Sets the timezone used by the time converter. When set together with the -u flag, the time provided by the user (already in UTC) will be converted to the time zone provided by the -t flag. When no -u flag is set, the -t flag assumes the user input to represent time in the -t time zone, which will then be converted to UTC.
+.TP
+.B -l, --list
+Displays a simple list of all supported Canadian time zones and their associated two-letter codes. Use the codes when setting the -t flag.
+.TP
+.B -h, --help
+Displays a simple help screen with brief descriptions of each option.
+.TP
+.B -m, --man
+Displays this manual page.
+.SH AUTHOR
+Greg Pyle
+.br
+Department of Biological Sciences
+.br
+University of Lethbridge
+.br
+Lethbridge, AB, Canada
+.br
+Email: gregory.pyle@uleth.ca
+.PP
+Copyright 2015, Greg Pyle, Lethbridge, AB, Canada
