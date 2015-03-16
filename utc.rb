@@ -115,7 +115,12 @@ if ARGV.any?{ |s| s.casecmp("now") == 0 }
 	hour = dt.hour
 	minute = dt.min
 
-elsif ARGV.join(" ").match(treg) # If a time range is detected; e.g. 13:00 - 14:00
+elsif ARGV.join(" ").include?("-") # If a time range is detected; e.g. 13:00 - 14:00
+	# Check input to ensure an acceptable time format has been provided.
+	if ! ARGV.join(" ").match(treg)
+		puts "Error: There is a problem with the time range that you provided." 
+		exit
+	end
 	range = true
 	tt = ARGV.join(" ")
 	begin
