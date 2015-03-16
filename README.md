@@ -6,6 +6,14 @@ The only problem with using UTC is that it's not always immediately intuitive ho
 
 Although it would be more broadly applicable if it included all time zones world-wide, this program is limited to only Canadian time zones, because those are the time zones I work with most. Maybe in a future update I'll get around to including all time zones. 
 
+## Files in the utc Directory
+The utc folder ships with several files, including:
+
+* `README.md` - this file
+* `GPLicenseV3.txt` - the text of the GNU General Public License under which this software is released
+* `utc.rb` - the Ruby code that runs the utc application
+* `utc.1` - the manual page that is formatted and displayed using the -m flag
+
 ## Installation
 Unzip the archive to wherever you want and just run the program from there. It can live anywhere in your file hierarchy and will work just fine. As long as you've got a Ruby runtime environment installed on your system, you can run the program right out of the box using standard Ruby conventions. For example, navigate to the utc directory and type:
 
