@@ -24,6 +24,3 @@ Once you have the tool up and running, simply type `utc -m` (or `ruby utc.rb -m`
 
 Thanks for downloading this little tool. I hope you find it useful.
 
-Greg Pyle  
-Developer of utc  
-(c) 2015 Gregory G Pyle, Lethbridge, AB, Canada
