@@ -65,7 +65,7 @@ optparse = OptionParser.new do |opts|
 	end
 
 	# Set the timezone of interest to/from which to convert UTC
-	timezone_list = (TIMEZONE_ALIASES.keys + TIMEZONES).join(',')
+	# timezone_list = (TIMEZONE_ALIASES.keys + TIMEZONES).join(',')
 	options[:tz] = ""
 	opts.on("-t", "--timezone TIMEZONE", TIMEZONES, TIMEZONE_ALIASES, "Select timezone (see -l flag)",
 		) do |timezone|
